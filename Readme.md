@@ -15,6 +15,8 @@
 	- Create Crud repository interface
 	- Configure the Data Source/Data base connection configuration
 - Create Entity class similar to table and annotate @Entity, @Table, @Id and @Column
-- Create an interface which extends CrudRepository<T, ID extends Serializable>; the crud repository provides basic operations to repository object
+- Create an interface which extends CrudRepository<T, ID extends Serializable>; the crud repository provides basic operations to repository object like create, findOne, findAll, count, save, delete, exist
 - add database configuration settings in application.properties file
-[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7db210d4ceadfae8da909d48d2d65aea95c15088)
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7db210d4ceadfae8da909d48d2d65aea95c15088	)
+- Note: spring JPA doesn't show the query while running the code; you can enable to display the query by adding spring.jpa.show-sql=true in application.properties
+ 
