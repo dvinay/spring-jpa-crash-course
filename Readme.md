@@ -19,4 +19,30 @@
 - add database configuration settings in application.properties file
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7db210d4ceadfae8da909d48d2d65aea95c15088	)
 - Note: spring JPA doesn't show the query while running the code; you can enable to display the query by adding spring.jpa.show-sql=true in application.properties
- 
+
+### ID Generators ###
+- When Id as primary key to select the unique row in datbase table; the primary key is depending on the table configuration.
+- JPA provides the generation of Id in 4 different ways
+	- GenerationType.AUTO
+	- GenerationType.IDENTITY
+	- GenerationType.SEQUENCE
+	- GenerationType.TABLE
+- To configure the above id strategy; we need to add the @GeneratedValue(strategy=GenerationType.AUTO) annotation with generation type
+- for AUTO; the JPA provider checks the database what kind of strategy does the database supports identity or sequence or table
+- for IDENTITY; the primary key is a auto increment
+- for SEQUENCE; the primary key uses custom logic for sequence to generate
+- Note: mysql don't supports sequences
+- for TABLE; persistence provider uses a special table to store the keys and uses that keys as primary key for table; we need to create special table along with entity table
+
+
+
+
+
+
+
+
+
+
+
+
+
