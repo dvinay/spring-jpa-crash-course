@@ -8,4 +8,7 @@ cardnumber varchar(20),
 checknumber varchar(20)
 );
 -- pmode is a discriminator column; holds the type of child class
+
 select * from payment
+
+drop table payment;

@@ -134,8 +134,10 @@ List<Student> findAllStudentsNQ();
 	- SINGLE_TABLE 
 	- TABLE_PER_CLASS
 	- JOINED
+
 - SINGLE_TABLE, all the information store in single table; while implmenting this strategy, we need to provide Discrimintor column to differentiate child types
 - to implement this strategy, we use @DiscriminatorColumn and @DiscriminatorValue
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/62c445be409b9b6d35c2abdfae860e9ff7ae9aeb)
 
 
 
