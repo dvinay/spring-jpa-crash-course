@@ -19,9 +19,17 @@ public class JpqlandnativesqlApplicationTests {
 	StudentRepository studentRepository;
 	
 	@Test
-	public void contextLoads() {
+	public void contextLoadStudent() {
 		List<Student> students = studentRepository.findAllStudents();
 		students.forEach(p -> System.out.println(p));
+	}
+	
+	@Test
+	public void contextLoadStudentsPartialData() {
+		List<Object[]> students = studentRepository.findAllStudentsPartialData();
+		for(Object[] objects: students) {
+			System.out.println(objects[0] +" "+ objects[1]);
+		}
 	}
 
 }

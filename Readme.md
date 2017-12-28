@@ -106,7 +106,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	List<Student> findAllStudents();
 }
 ``` 
-
+- we get partial data from the table; @Query return as List<Object[]>
 
 
 
