@@ -108,6 +108,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 ``` 
 - we get partial data from the table; @Query return as List<Object[]>
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/5f6ae64d287286c00144bd9bbdf1fe10167aa037)
+- Note: while using jpql for data change operations like delete, we need to add @Modifying annotation for the function and @Transactional before using the delete function
 
 
 
