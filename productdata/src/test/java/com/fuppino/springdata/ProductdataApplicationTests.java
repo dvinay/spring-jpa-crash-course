@@ -2,6 +2,7 @@ package com.fuppino.springdata;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -57,6 +58,42 @@ public class ProductdataApplicationTests {
 	@Test
 	public void testFindByNameProduct() {
 		List<Product> products = productRepository.findByName("Watch");
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testFindByNameAndDescProduct() {
+		List<Product> products = productRepository.findByNameAndDesc("Watch","IWatch from Apple");
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testFindByPriceGreaterThanProduct() {
+		List<Product> products = productRepository.findByPriceGreaterThan(800.00);
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testFindByDescContainsProduct() {
+		List<Product> products = productRepository.findByDescContains("Apple");
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testFindByPriceBetweenProduct() {
+		List<Product> products = productRepository.findByPriceBetween(900.00, 1000.00);
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testFindByDescLikeProduct() {
+		List<Product> products = productRepository.findByDescLike("%Apple%");
+		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testfindByIdInProduct() {
+		List<Product> products = productRepository.findByIdIn(Arrays.asList(1,2,3));
 		products.stream().forEach(System.out::println);
 	}
 
