@@ -9,6 +9,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fuppino.springdata.product.ProductDataApplication;
@@ -95,6 +100,19 @@ public class ProductdataApplicationTests {
 	public void testfindByIdInProduct() {
 		List<Product> products = productRepository.findByIdIn(Arrays.asList(1,2,3));
 		products.stream().forEach(System.out::println);
+	}
+	
+	@Test
+	public void testfindAllPageableProduct() {
+		Pageable pageable = new PageRequest(1,2);
+		Page<Product> products = productRepository.findAll(pageable);
+		products.forEach(p -> System.out.println(p.getName()));
+	}
+	
+	@Test
+	public void testfindAllSortingProduct() {
+		Iterable<Product> products = productRepository.findAll(new Sort(Direction.DESC,"name"));
+		products.forEach(p -> System.out.println(p.getName()));
 	}
 
 }

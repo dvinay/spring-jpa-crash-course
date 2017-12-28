@@ -81,8 +81,19 @@ public class Student {
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/eaa17f8452c2d5097ca2e9d1a07511b26d29e4b1)
 - for more finder methods [ref](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords) [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/5a081fa512b83730a8721db342234fe7586315b2)
 
-
-
+### Paging and Sorting methods ###
+- to eanble paging and sorting for your entity; repository interface must extend PagingAndSortingRepository interface
+- PagingAndSortingRepository is a child interface of CrudRepository
+- To use paging methods, we need to pass Pageable or Sort object while calling the finder methods
+```JAVA
+//Pageing
+Pageable pageable = new PageRequest(1,2);
+Page<Product> products = productRepository.findAll(pageable );
+products.forEach(p -> System.out.println(p.getName()));
+//Sorting
+Iterable<Product> products = productRepository.findAll(new Sort(Direction.DESC,"name"));
+products.forEach(p -> System.out.println(p.getName()));
+```
 
 
 
