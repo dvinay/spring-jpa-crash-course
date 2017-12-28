@@ -117,13 +117,13 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 - Native SQL Queries are used to perform complex query operations and write queries in SQL format.If JPQL queries are difficult to write like joining multiple jobs
 - we can write create statements also like Table, db creation
 - for Native SQL Queries also, we need to use @Query with nativeQuery boolean parameter as true
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4df614c25cbec78895e23c764e7884de052206d1)
 ```JAVA
 @Query(nativeQuery=true, value="select * from student")
 List<Student> findAllStudentsNQ();
 ```
-[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4df614c25cbec78895e23c764e7884de052206d1)
 
-### Inheritance Mapping ###
+### Inheritance Mapping - IS A relationship###
 - If we have some fileds are common in multple tables, we can divide them like Object oriented Parent Child relation ship
 - by using Inheritance Mapping, we can apply parent and child relationship from Object Oriented principle to Database; this is called Sub-Type problem in ORM
 - e.g: 
@@ -149,7 +149,7 @@ List<Student> findAllStudentsNQ();
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/0e987681888c8727ba8087a7fef610b206b7b2ee)
 - after runnning this child class insertion; it will create a column in parent table and ref to child table
 
-
+### Component Mapping - Has A relationship###
 
 
 
