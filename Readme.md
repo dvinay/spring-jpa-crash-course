@@ -113,7 +113,14 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 - by adding Pageable object to function and passing pagerequst;  we can adapt paging and sorting for queries.
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/64f6da9e505a31229bf8951de99a1b683301ba7a)
 
-
+### Native SQL Queries ###
+- Native SQL Queries are used to perform complex query operations and write queries in SQL format.If JPQL queries are difficult to write like joining multiple jobs
+- we can write create statements also like Table, db creation
+- for Native SQL Queries also, we need to use @Query with nativeQuery boolean parameter as true
+```JAVA
+@Query(nativeQuery=true, value="select * from student")
+List<Student> findAllStudentsNQ();
+```
 
 
 

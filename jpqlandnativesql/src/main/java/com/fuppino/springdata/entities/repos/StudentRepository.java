@@ -18,6 +18,10 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	@Query("from Student")
 	List<Student> findAllStudents(Pageable pageable);
 	
+
+	@Query(nativeQuery=true, value="select * from student")
+	List<Student> findAllStudentsNQ();
+	
 	@Query("select st.firstName, st.lastName from Student st")
 	List<Object[]> findAllStudentsPartialData();
 	
@@ -26,7 +30,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	
 	@Query("from Student where score>:min and score<:max")
 	List<Student> findAllStudentsForGivenScoreRange(@Param("min") int min,@Param("max") int max);
-	
+
 	@Modifying
 	@Query("delete from Student where firstName=:firstName")
 	void deletStudentsForGivenFirstName(@Param("firstName") String firstName);

@@ -37,6 +37,12 @@ public class JpqlandnativesqlApplicationTests {
 	}
 	
 	@Test
+	public void testStudentNQ() {
+		List<Student> students = studentRepository.findAllStudentsNQ();
+		students.forEach(p -> System.out.println(p));
+	}
+	
+	@Test
 	public void testStudentsPartialData() {
 		List<Object[]> students = studentRepository.findAllStudentsPartialData();
 		for(Object[] objects: students) {
@@ -58,7 +64,7 @@ public class JpqlandnativesqlApplicationTests {
 	
 	@Test
 	@Transactional
-	@Rollback(false)
+	@Rollback(false) //only in testing
 	public void testDeletStudentsForGivenFirstName() {
 		studentRepository.deletStudentsForGivenFirstName("mac");
 	}
