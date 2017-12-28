@@ -123,7 +123,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 List<Student> findAllStudentsNQ();
 ```
 
-### Inheritance Mapping - IS A relationship###
+### Inheritance Mapping - IS A relationship ###
 - If we have some fileds are common in multple tables, we can divide them like Object oriented Parent Child relation ship
 - by using Inheritance Mapping, we can apply parent and child relationship from Object Oriented principle to Database; this is called Sub-Type problem in ORM
 - e.g: 
@@ -149,7 +149,7 @@ List<Student> findAllStudentsNQ();
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/0e987681888c8727ba8087a7fef610b206b7b2ee)
 - after runnning this child class insertion; it will create a column in parent table and ref to child table
 
-### Component Mapping - Has A relationship###
+### Component Mapping - Has A relationship ###
 
 
 
