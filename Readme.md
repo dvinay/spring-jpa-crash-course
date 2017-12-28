@@ -121,7 +121,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 @Query(nativeQuery=true, value="select * from student")
 List<Student> findAllStudentsNQ();
 ```
-
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4df614c25cbec78895e23c764e7884de052206d1)
 
 
 
