@@ -141,7 +141,7 @@ List<Student> findAllStudentsNQ();
 
 - TABLE_PER_CLASS, as name suggest it divide each class as a seperate table.
 - It increases the duplicate columns into multiple tables; but reduce the read opearation
-
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4d54ad237059b14adf4a698fd5b28997d0657076)
 
 
 
