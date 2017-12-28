@@ -143,6 +143,12 @@ List<Student> findAllStudentsNQ();
 - It increases the duplicate columns into multiple tables; but reduce the read opearation
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4d54ad237059b14adf4a698fd5b28997d0657076)
 
+- JOINED, uses each class as a seperate table with foreign key as ref between tables.
+- Joined is best approach; it follows the database normalization and less data with proper reference key
+- To refer the primary key and foreignkey relation ship; we need to use @PrimaryKeyJoinColumn(name="parentclass_id") annotation
+- after runnning this child class insertion; it will create a column in parent table and ref to child table
+
+
 
 
 

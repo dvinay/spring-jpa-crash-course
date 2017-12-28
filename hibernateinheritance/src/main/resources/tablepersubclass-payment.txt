@@ -1,0 +1,22 @@
+use jpadb;
+
+create table payment(
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	amount decimal(8,3)
+);
+
+create table creditcard(
+	id int ,
+	cardnumber varchar(20),
+ 	FOREIGN KEY (id) REFERENCES payment(id)
+)
+
+create table bankcheck(
+	id int ,
+	checknumber varchar(20),
+	FOREIGN KEY (id) REFERENCES payment(id)
+)
+
+drop table creditcard;
+drop table bankcheck;
+drop table payment;

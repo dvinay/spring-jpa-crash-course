@@ -56,4 +56,22 @@ public class HibernateinheritanceApplicationTests {
 		check.setAmount(100.00);
 		paymentRepository.save(check);
 	}
+	
+	@Test
+	public void testCreateCreditCardJoin() {
+		CreditCard creditCard = new CreditCard();
+		creditCard.setId(123);
+		creditCard.setCardnumber("1234567890");
+		creditCard.setAmount(34.56);
+		paymentRepository.save(creditCard);		
+	}
+	
+	@Test
+	public void testCheckJoin() {
+		Check check = new Check();
+		check.setId(124);
+		check.setChecknumber("1234567890");
+		check.setAmount(100.00);
+		paymentRepository.save(check);
+	}
 }

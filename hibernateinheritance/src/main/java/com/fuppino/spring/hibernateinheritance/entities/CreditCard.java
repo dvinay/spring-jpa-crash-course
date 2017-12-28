@@ -1,6 +1,7 @@
 package com.fuppino.spring.hibernateinheritance.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @DiscriminatorValue("cc")
 */
 @Table(name="creditcard")
+@PrimaryKeyJoinColumn(name="id")
 public class CreditCard extends Payment {
 	private String cardnumber;
 
