@@ -123,6 +123,24 @@ List<Student> findAllStudentsNQ();
 ```
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4df614c25cbec78895e23c764e7884de052206d1)
 
+### Inheritance Mapping ###
+- If we have some fileds are common in multple tables, we can divide them like Object oriented Parent Child relation ship
+- by using Inheritance Mapping, we can apply parent and child relationship from Object Oriented principle to Database; this is called Sub-Type problem in ORM
+- e.g: 
+	Payment {id, amount} 
+		->Card extends Payment {cardnumber}
+		->Check extends Payment {checknumber}
+- JPA provide three strategies to solve
+	- SINGLE_TABLE 
+	- TABLE_PER_CLASS
+	- JOINED
+- SINGLE_TABLE, all the information store in single table; while implmenting this strategy, we need to provide Discrimintor column to differentiate child types
+- to implement this strategy, we use @DiscriminatorColumn and @DiscriminatorValue
+
+
+
+
+
 
 
 
