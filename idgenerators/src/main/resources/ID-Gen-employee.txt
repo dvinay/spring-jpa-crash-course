@@ -1,0 +1,8 @@
+use jpadb
+
+create table employee(
+id int PRIMARY KEY AUTO_INCREMENT,
+name varchar(20)
+)
+
+drop table employee

@@ -29,10 +29,15 @@
 	- GenerationType.TABLE
 - To configure the above id strategy; we need to add the @GeneratedValue(strategy=GenerationType.AUTO) annotation with generation type
 - for AUTO; the JPA provider checks the database what kind of strategy does the database supports identity or sequence or table
-- for IDENTITY; the primary key is a auto increment
+- for IDENTITY; the primary key is a auto increment; database will automatically increment for us.
 - for SEQUENCE; the primary key uses custom logic for sequence to generate
 - Note: mysql don't supports sequences
 - for TABLE; persistence provider uses a special table to store the keys and uses that keys as primary key for table; we need to create special table along with entity table
+
+- To use IDENTITY; the table must contain primary key as auto increment like
+- create table employee( id int PRIMARY KEY AUTO_INCREMENT, name varchar(20))
+- the entity must have @GeneratedValue(strategy=GenerationType.IDENTITY)
+
 
 
 
