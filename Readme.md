@@ -139,6 +139,8 @@ List<Student> findAllStudentsNQ();
 - to implement this strategy, we use @DiscriminatorColumn and @DiscriminatorValue
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/62c445be409b9b6d35c2abdfae860e9ff7ae9aeb)
 
+- TABLE_PER_CLASS, as name suggest it divide each class as a seperate table.
+- It increases the duplicate columns into multiple tables; but reduce the read opearation
 
 
 
