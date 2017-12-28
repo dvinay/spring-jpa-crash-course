@@ -74,4 +74,12 @@ public class JpqlandnativesqlApplicationTests {
 		List<Student> students = studentRepository.findAllStudentsByFirstNameNQ("mac");
 		students.forEach(p -> System.out.println(p));
 	}
+	
+	@Test
+	public void testFindAllStudentLastNameByFirstNameNQ() {
+		List<String> students = studentRepository.findAllStudentLastNameByFirstNameNQ("bit");
+		for(String studentArray: students) {
+			System.out.println(studentArray);
+		}
+	}
 }
