@@ -57,7 +57,10 @@ gen_val int(20)
 - we have to map the table in @GeneratedValue like @GeneratedValue(strategy=GenerationType.TABLE, generator="employee_gen")
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/a8e338bbb0e1f2decc720d668233b10930d896c2)
 
-
+- Instead of JPA provider Generater strategy, we can develop our own custom strategy; the custom strategy must develop a unique value
+	- create a class which implements hibernate IdentifierGenerator
+	- overide generate method with custom unique id generation logic
+	- to use custom generator using @GenericGenerator(name="student_id", strategy="com.fuppino.springdata.idgenerators.custom.CustomRandomIDGenerator")
 
 
 
