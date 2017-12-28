@@ -146,6 +146,7 @@ List<Student> findAllStudentsNQ();
 - JOINED, uses each class as a seperate table with foreign key as ref between tables.
 - Joined is best approach; it follows the database normalization and less data with proper reference key
 - To refer the primary key and foreignkey relation ship; we need to use @PrimaryKeyJoinColumn(name="parentclass_id") annotation
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/0e987681888c8727ba8087a7fef610b206b7b2ee)
 - after runnning this child class insertion; it will create a column in parent table and ref to child table
 
 
