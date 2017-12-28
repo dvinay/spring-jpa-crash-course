@@ -79,6 +79,7 @@ public class Student {
 - we need to add findBy* methods in repository and use it; 
 - List<Product> findByName(String name);
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/eaa17f8452c2d5097ca2e9d1a07511b26d29e4b1)
+- for more finder methods [ref](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords) [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/5a081fa512b83730a8721db342234fe7586315b2)
 
 
 
