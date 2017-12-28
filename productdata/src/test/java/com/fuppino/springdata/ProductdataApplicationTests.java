@@ -2,6 +2,8 @@ package com.fuppino.springdata;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +52,12 @@ public class ProductdataApplicationTests {
 	@Test
 	public void testDeleteProduct() {
 		productRepository.delete(1);
+	}
+	
+	@Test
+	public void testFindByNameProduct() {
+		List<Product> products = productRepository.findByName("Watch");
+		products.stream().forEach(System.out::println);
 	}
 
 }

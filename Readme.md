@@ -74,7 +74,10 @@ public class Student {
 }
 ```
 
-
+### Finder methods ###
+- Spring JPA provides abstract finder methods to get the data based on columns
+- we need to add findBy* methods in repository and use it; 
+- List<Product> findByName(String name);
 
 
 
