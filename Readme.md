@@ -111,6 +111,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 - Note: while using jpql for data change operations like delete, we need to add @Modifying annotation for the function and @Transactional before using the delete function
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/3e61fc4caaa23bddc14ff32c40fbffe16d86c67f)
 - by adding Pageable object to function and passing pagerequst;  we can adapt paging and sorting for queries.
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/64f6da9e505a31229bf8951de99a1b683301ba7a)
 
 
 
