@@ -18,7 +18,6 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	@Query("from Student")
 	List<Student> findAllStudents(Pageable pageable);
 	
-
 	@Query(nativeQuery=true, value="select * from student")
 	List<Student> findAllStudentsNQ();
 	
@@ -34,4 +33,7 @@ public interface StudentRepository extends CrudRepository<Student, Long>{
 	@Modifying
 	@Query("delete from Student where firstName=:firstName")
 	void deletStudentsForGivenFirstName(@Param("firstName") String firstName);
+	
+	@Query(nativeQuery=true, value="select * from student where fname=:firstName")
+	List<Student> findAllStudentsByFirstNameNQ(@Param("firstName") String firstName);
 }

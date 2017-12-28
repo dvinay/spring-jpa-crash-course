@@ -69,4 +69,9 @@ public class JpqlandnativesqlApplicationTests {
 		studentRepository.deletStudentsForGivenFirstName("mac");
 	}
 
+	@Test
+	public void testFindAllStudentsByFirstNameNQ() {
+		List<Student> students = studentRepository.findAllStudentsByFirstNameNQ("mac");
+		students.forEach(p -> System.out.println(p));
+	}
 }
