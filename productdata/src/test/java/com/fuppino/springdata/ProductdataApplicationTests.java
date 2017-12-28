@@ -112,6 +112,7 @@ public class ProductdataApplicationTests {
 	@Test
 	public void testfindAllSortingProduct() {
 		Iterable<Product> products = productRepository.findAll(new Sort(Direction.DESC,"name"));
+		//Iterable<Product> products = productRepository.findAll(new Sort(Direction.DESC,"name","price"));
 		products.forEach(p -> System.out.println(p.getName()));
 	}
 

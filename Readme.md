@@ -96,7 +96,10 @@ Iterable<Product> products = productRepository.findAll(new Sort(Direction.DESC,"
 products.forEach(p -> System.out.println(p.getName()));
 ```
 
-
+### JPQL ###
+- Java Persistence Query Language used to perform database table operations against Domain Objects
+- By using JPQL we can perform complex query operations. These queries are converting by ORM tools into SQL.
+ 
 
 
 
