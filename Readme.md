@@ -60,8 +60,8 @@ gen_val int(20)
 - Instead of JPA provider Generater strategy, we can develop our own custom strategy; the custom strategy must develop a unique value
 	- create a class which implements hibernate IdentifierGenerator
 	- overide generate method with custom unique id generation logic
-	- to use custom generator using @GenericGenerator and @GeneratedValue
-- [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/d1f6d473c794a29386b6273e3455e95f59d44892)
+	- to use custom generator using @GenericGenerator and @GeneratedValue 
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/d1f6d473c794a29386b6273e3455e95f59d44892)
 ```JAVA
 @Entity
 public class Student {
