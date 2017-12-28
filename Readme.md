@@ -99,7 +99,13 @@ products.forEach(p -> System.out.println(p.getName()));
 ### JPQL ###
 - Java Persistence Query Language used to perform database table operations against Domain Objects
 - By using JPQL we can perform complex query operations. These queries are converting by ORM tools into SQL.
- 
+- to run a basic query using jpql, we can use @Query annotation and pass the jpql as parameter
+```JAVA
+public interface StudentRepository extends CrudRepository<Student, Long>{	
+	@Query("from Student")
+	List<Student> findAllStudents();
+}
+``` 
 
 
 
