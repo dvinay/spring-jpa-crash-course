@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -24,6 +26,13 @@ public class JpqlandnativesqlApplicationTests {
 	@Test
 	public void testStudent() {
 		List<Student> students = studentRepository.findAllStudents();
+		students.forEach(p -> System.out.println(p));
+	}
+	
+	@Test
+	public void testStudentPageable() {
+		Pageable pageable = new PageRequest(0, 2);
+		List<Student> students = studentRepository.findAllStudents(pageable);
 		students.forEach(p -> System.out.println(p));
 	}
 	
