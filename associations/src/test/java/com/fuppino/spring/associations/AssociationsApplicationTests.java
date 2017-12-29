@@ -98,4 +98,9 @@ public class AssociationsApplicationTests {
 	
 		customerRepository.save(customer);
 	}
+	
+	@Test
+	public void testDeleteCustomer() {
+		customerRepository.delete(2L);
+	}
 }

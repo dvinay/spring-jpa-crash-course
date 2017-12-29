@@ -193,7 +193,7 @@ List<Student> findAllStudentsNQ();
 @OneToMany(mappedBy="customer",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 private Set<PhoneNumber> numbers;
 ```
-
+- while doing delete operation; jpa delete the child data first and then parent data to avoid fk conflict
 
 
 
