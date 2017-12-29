@@ -47,5 +47,23 @@ public class AssociationsApplicationTests {
 		
 		customerRepository.save(customer);
 	}
+	
+	@Test
+	public void testCreateCustomer2() {
+		Customer customer = new Customer();
+		customer.setName("Ravana");
+		
+		PhoneNumber ph1 = new PhoneNumber();
+		ph1.setNumber("1234567890");
+		ph1.setType("Home");
+		customer.addNumber(ph1);
+		
+		PhoneNumber ph2 = new PhoneNumber();
+		ph2.setNumber("0987654321");
+		ph2.setType("Mobile");
+		customer.addNumber(ph2);
+		
+		customerRepository.save(customer);
+	}
 
 }
