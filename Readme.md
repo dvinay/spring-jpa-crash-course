@@ -150,8 +150,7 @@ List<Student> findAllStudentsNQ();
 - after runnning this child class insertion; it will create a column in parent table and ref to child table
 
 ### Component Mapping - Has A relationship ###
-- It's process to store the has-a relationship data into one table; need to use @Embedded and @Embeddable annotations
-- 
+- It's process to store the has-a relationship data into one table; need to use @Embedded and @Embeddable annotations [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/231c30312c5f5702245a231bf3635b10dfd6361f) 
 
 
 
