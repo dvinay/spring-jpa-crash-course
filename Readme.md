@@ -174,7 +174,9 @@ List<Student> findAllStudentsNQ();
 	- detach  - detach on main object should propagate to child object
 	- all  	  - all operations on main object should propagate to child object
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/c9451941ab0e2e6562dd9cb70651c8923f896975)
+
 - To read the association data
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7bf5b3b85a7273bc5cfc5c6a77d95c60123b7831)
 
 
 
