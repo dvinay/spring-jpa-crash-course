@@ -177,7 +177,7 @@ List<Student> findAllStudentsNQ();
 
 - To read the association data
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7bf5b3b85a7273bc5cfc5c6a77d95c60123b7831)
-
+- To update operation, if the customer has cascade option with all or merge then it will update both customer and phonenumber.
 
 
 

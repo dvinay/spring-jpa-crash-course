@@ -89,5 +89,13 @@ public class AssociationsApplicationTests {
 		System.out.println("Customer : "+phoneNumber.getCustomer());
 	}
 	
-
+	@Test
+	public void testUpdateCustomer() {
+		Customer customer = customerRepository.findOne(2L);
+		customer.setName("Laxman");
+		Set<PhoneNumber> numbers = customer.getNumbers();
+		numbers.forEach(p -> p.setType("cell"));
+	
+		customerRepository.save(customer);
+	}
 }
