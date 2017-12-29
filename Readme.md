@@ -185,6 +185,9 @@ List<Student> findAllStudentsNQ();
 	- Eager loading - while fetching the parent data the child data also load
 	- Lazy loading - while fetching the parent data the child data don't load; but while using the child data like getNumber() the data load. it's a on-demand data loading
 	- Lazy loading improve the performance; because it fetched on-demand/whie first time usage of the child data
+	- To work lazy loading add @Transactional from org.springframework.transaction.annotation package
+	- for eager loading, jpa query will be the join query
+	- for lazy loading, jpa run two diffirent queries for to fetch parent data and fetch child data
 - e.g: 	
 ```JAVA
 @OneToMany(mappedBy="customer",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
