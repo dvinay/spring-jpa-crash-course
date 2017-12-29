@@ -150,6 +150,9 @@ List<Student> findAllStudentsNQ();
 - after runnning this child class insertion; it will create a column in parent table and ref to child table
 
 ### Component Mapping - Has A relationship ###
+- It's process to store the has-a relationship data into one table; need to use @Embedded and @Embeddable annotations
+- 
+
 
 
 
