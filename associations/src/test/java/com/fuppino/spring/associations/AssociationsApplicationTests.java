@@ -3,13 +3,13 @@ package com.fuppino.spring.associations;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fuppino.spring.associations.entities.Customer;
 import com.fuppino.spring.associations.entities.PhoneNumber;
