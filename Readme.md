@@ -173,6 +173,7 @@ List<Student> findAllStudentsNQ();
 	- refresh - refreshing on main object should propagate to child object
 	- detach  - detach on main object should propagate to child object
 	- all  	  - all operations on main object should propagate to child object
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/c9451941ab0e2e6562dd9cb70651c8923f896975)
 
 
 
