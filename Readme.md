@@ -152,7 +152,27 @@ List<Student> findAllStudentsNQ();
 ### Component Mapping - Has A relationship ###
 - It's process to store the has-a relationship data into one table; need to use @Embedded and @Embeddable annotations [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/231c30312c5f5702245a231bf3635b10dfd6361f) 
 
+### Association Mapping ###
+- While normalizing the database tables, we will store data into multiple tables
+- JPA has provided 4 annotations to configure the association mapping @OneToOne, @OneToMany, @ManyToOne and @ManyToMany
+- e.g for one to many, to fetch data in bi-directional we need to map annotaion to both parent class and child class
+- client 1 -> * PhoneNumber
+	- Client
+		@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
+		List<PhoneNumber> phoneNumbers;
 
+	- PhoneNumber
+		@ManyToOne
+		@JoinColumn(name="fk_keycolumnname")
+		Client client;
+- Cascading is process of propagating the operations between associated tables
+- we can controll the cascade propagation by giving different values to cascade parameter in the association annotation
+	- persist - insert on main object should propagate to child object
+	- merge   - insert and update on main object should propagate to child object
+	- remove  - delete on main object should propagate to child object
+	- refresh - refreshing on main object should propagate to child object
+	- detach  - detach on main object should propagate to child object
+	- all  	  - all operations on main object should propagate to child object
 
 
 
