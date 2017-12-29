@@ -178,6 +178,8 @@ List<Student> findAllStudentsNQ();
 - To read the association data
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/7bf5b3b85a7273bc5cfc5c6a77d95c60123b7831)
 - To update operation, if the customer has cascade option with all or merge then it will update both customer and phonenumber.
+- while doing update operation, hibernate check the dirty flag; means if the child doen't require to update new data. it will skip the update statement
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4e94cd20e420c47b9eacfe20a3c3d235d4c140ba)
 
 
 
