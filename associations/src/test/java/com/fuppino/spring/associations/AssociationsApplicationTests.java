@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.fuppino.spring.associations.entities.Customer;
 import com.fuppino.spring.associations.entities.PhoneNumber;
 import com.fuppino.spring.associations.repos.CustomerRepository;
+import com.fuppino.spring.associations.repos.PhoneNumberRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AssociationsApplication.class)
@@ -21,6 +22,9 @@ public class AssociationsApplicationTests {
 
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	PhoneNumberRepository phoneNumberRepository;
 	
 	@Test
 	public void contextLoads() {
@@ -75,6 +79,14 @@ public class AssociationsApplicationTests {
 		System.out.println("Customer : "+customer.getName());
 		Set<PhoneNumber> numbers = customer.getNumbers();
 		numbers.forEach(System.out::println);
+	}
+	
+	@Test
+	@Transactional
+	public void testLoadPhoneNumber() {
+		PhoneNumber phoneNumber = phoneNumberRepository.findOne(3);
+		System.out.println("Phone Number : "+phoneNumber);
+		System.out.println("Customer : "+phoneNumber.getCustomer());
 	}
 	
 
