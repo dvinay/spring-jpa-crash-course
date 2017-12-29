@@ -180,7 +180,16 @@ List<Student> findAllStudentsNQ();
 - To update operation, if the customer has cascade option with all or merge then it will update both customer and phonenumber.
 - while doing update operation, hibernate check the dirty flag; means if the child doen't require to update new data. it will skip the update statement
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/4e94cd20e420c47b9eacfe20a3c3d235d4c140ba)
-
+- Lazy loaing vs Eager loading
+	- while fetching the association data, hibernate look the data loading type; default is lazy loading.
+	- Eager loading - while fetching the parent data the child data also load
+	- Lazy loading - while fetching the parent data the child data don't load; but while using the child data like getNumber() the data load. it's a on-demand data loading
+	- Lazy loading improve the performance; because it fetched on-demand/whie first time usage of the child data
+- e.g: 	
+```JAVA
+@OneToMany(mappedBy="customer",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+private Set<PhoneNumber> numbers;
+```
 
 
 
