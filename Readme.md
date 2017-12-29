@@ -194,6 +194,7 @@ List<Student> findAllStudentsNQ();
 private Set<PhoneNumber> numbers;
 ```
 - while doing delete operation; jpa delete the child data first and then parent data to avoid fk conflict
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/48bddfd1ccd01bea0888def6133a15e63a4d4912)
 
 
 
