@@ -326,7 +326,8 @@ spring.cache.ehcache.config=classpath:ehcahe.xml
 </ehcache>
 ```
 	- Make entities cacheable/add annotations
-[ref]()
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/725a1774b8508231c053cd85214a29a070187ebe)
+
 #### Cache Concurrency Strategy ####
 - READ_ONLY
 	- used for only when entities never change, only for read only purpose applications
