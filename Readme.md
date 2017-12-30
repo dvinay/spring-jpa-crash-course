@@ -234,6 +234,25 @@ private Set<PhoneNumber> numbers;
 - [Programmer entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Programmer.java)
 - [Project entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Project.java)
 - While performing read operation it loads the data as lazy loading; to fetch the complte data we need to add @Transactional
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/30fdf7341675a1b7a6a7cf86b5d524b9f6377514)
+
+#### OneToOne ####
+- Person 1 <-> 1 License
+- in one to one association has two ways, 1) sharing the PK, 2) one table PK is a FK for other table
+	- Person
+
+		@OneToOne(mappedBy = "person")
+
+		private License license;
+
+	- License
+
+		@OneToOne(cascade = CascadeType.ALL)
+
+		@JoinColumn(name = "person_id")
+
+		private Person person;
+
 
 
 
