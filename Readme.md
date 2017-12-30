@@ -233,6 +233,7 @@ private Set<PhoneNumber> numbers;
 - [database ref](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/resources/manytomany.txt)
 - [Programmer entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Programmer.java)
 - [Project entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Project.java)
+- While performing read operation it loads the data as lazy loading; to fetch the complte data we need to add @Transactional
 
 
 

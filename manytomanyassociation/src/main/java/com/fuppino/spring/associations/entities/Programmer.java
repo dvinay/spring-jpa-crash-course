@@ -60,6 +60,6 @@ public class Programmer {
 	
 	@Override
 	public String toString() {
-		return "Programmer [id=" + id + ", name=" + name + ", salary=" + salary + ", projects=" + projects + "]";
+		return "Programmer [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
 }

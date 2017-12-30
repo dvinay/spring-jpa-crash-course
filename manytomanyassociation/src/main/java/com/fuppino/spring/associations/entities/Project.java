@@ -36,6 +36,10 @@ public class Project {
 	public void setProgrammer(Set<Programmer> programmer) {
 		Programmer = programmer;
 	}
+	@Override
+	public String toString() {
+		return "Project [id=" + id + ", name=" + name + "]";
+	}
 	
 	
 }
