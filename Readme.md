@@ -210,7 +210,7 @@ private Set<PhoneNumber> numbers;
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/48bddfd1ccd01bea0888def6133a15e63a4d4912)
 
 #### ManyToMany ####
-- Patient * <-> * Doctor
+- Programmer * <-> * Project
 - in Many to many association we need a extra table to store the mapping information
 	- Programmer
 
@@ -230,6 +230,9 @@ private Set<PhoneNumber> numbers;
 		private Set<Programmer> Programmer;
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/69851606d51cb0b81acefa111595de178deff638)
 
+- [database ref](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/resources/manytomany.txt)
+- [Programmer entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Programmer.java)
+- [Project entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/manytomanyassociation/src/main/java/com/fuppino/spring/associations/entities/Project.java)
 
 
 
