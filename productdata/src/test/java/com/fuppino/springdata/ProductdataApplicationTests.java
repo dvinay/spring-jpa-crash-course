@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fuppino.springdata.product.ProductDataApplication;
 import com.fuppino.springdata.product.entity.Product;
@@ -116,4 +117,11 @@ public class ProductdataApplicationTests {
 		products.forEach(p -> System.out.println(p.getName()));
 	}
 
+	@Test
+	@Transactional
+	public void testCaching() {
+		productRepository.findOne(2);
+		productRepository.findOne(2);
+		productRepository.findOne(2);
+	}
 }

@@ -253,6 +253,28 @@ private Set<PhoneNumber> numbers;
 
 		private Person person;
 
+### Caching ###
+- Caching is process of storing the database data into disk or file to get the data next time without hitting the database again and agian
+- Hibernate supports two levels of caching
+	- Level 1 -> Session 
+	- Level 2 -> SessionFactory
+- Level-1 is default enable always
+- Level-2 cache objects will be shared across all the sessions(all uses)
+- Hibernate doesn't have in-built support for Level-2; we need to use other supports to get Level-2 cache
+	- e.g: EhCache, swaram Cache, Jboss Tree cache, OS Cache, Tangosol Cache
+
+#### L1 - Caching ####
+- L1 cache is always enabled at persistance context; to enable in the code level we need to add @Transactional from spring annotation package to our test method or service method to fetch
+- Transactional annotation enables the L1 cache; when first time it hit the database and fetch the record it keep in session; for next two time fetch it will get data from the L1 cache
+```JAVA
+@Test
+@Transactional
+public void testCaching() {
+	productRepository.findOne(2);
+	productRepository.findOne(2);
+	productRepository.findOne(2);
+}
+```
 
 
 
