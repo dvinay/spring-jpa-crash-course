@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
+import org.hibernate.Session;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,10 @@ public class ProductdataApplicationTests {
 
 	@Autowired
 	ProductRepository productRepository;
+	
+	@Autowired
+	EntityManager entityManager;
+
 	
 	@Test
 	public void contextLoads() {
@@ -120,8 +127,13 @@ public class ProductdataApplicationTests {
 	@Test
 	@Transactional
 	public void testCaching() {
+		Session session = entityManager.unwrap(Session.class);
+		Product product = productRepository.findOne(2);
+		
 		productRepository.findOne(2);
-		productRepository.findOne(2);
+		
+		session.evict(product);
+		
 		productRepository.findOne(2);
 	}
 }

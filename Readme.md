@@ -276,6 +276,22 @@ public void testCaching() {
 	productRepository.findOne(2);
 }
 ```
+- To remove object from Level-1 we can evict the object from the persistance context
+- To access the low level components like entity manager and hibernate session; we need to use entitymanager.unwrap() to access the session.
+```JAVA
+@Transactional
+public void testCaching() {
+	Session session = entityManager.unwrap(Session.class);
+	Product product = productRepository.findOne(2);
+	
+	productRepository.findOne(2);
+	
+	session.evict(product);
+	
+	productRepository.findOne(2);
+}
+```
+
 
 
 
