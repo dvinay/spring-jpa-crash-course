@@ -156,15 +156,23 @@ List<Student> findAllStudentsNQ();
 - While normalizing the database tables, we will store data into multiple tables
 - JPA has provided 4 annotations to configure the association mapping @OneToOne, @OneToMany, @ManyToOne and @ManyToMany
 - e.g for one to many, to fetch data in bi-directional we need to map annotaion to both parent class and child class
+
+#### OneToMany and ManyToOne ####
 - client 1 -> * PhoneNumber
 	- Client
 		@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
+
 		List<PhoneNumber> phoneNumbers;
 
+
 	- PhoneNumber
+
 		@ManyToOne
+
 		@JoinColumn(name="fk_keycolumnname")
+
 		Client client;
+		
 - Cascading is process of propagating the operations between associated tables
 - we can controll the cascade propagation by giving different values to cascade parameter in the association annotation
 	- persist - insert on main object should propagate to child object
@@ -196,6 +204,8 @@ private Set<PhoneNumber> numbers;
 - while doing delete operation; jpa delete the child data first and then parent data to avoid fk conflict
 [ref](https://github.com/dvinay/spring-jpa-crash-course/commit/48bddfd1ccd01bea0888def6133a15e63a4d4912)
 
+#### ManyToMany ####
+- Patient * <-> * Doctor
 
 
 
