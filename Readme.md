@@ -212,6 +212,22 @@ private Set<PhoneNumber> numbers;
 #### ManyToMany ####
 - Patient * <-> * Doctor
 - in Many to many association we need a extra table to store the mapping information
+	- Programmer
+
+	@ManyToMany(cascade=CascadeType.ALL)
+
+	@JoinTable(name="programmers_projects",
+		joinColumns=@JoinColumn(name="programmer_id",referencedColumnName="id"),
+		inverseJoinColumns=@JoinColumn(name="project_id",referencedColumnName="id"))
+
+	private Set<Project> projects;
+
+
+	- Project
+
+	@ManyToMany(mappedBy="projects")
+
+	private Set<Programmer> Programmer;
 
 
 
