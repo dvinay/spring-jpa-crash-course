@@ -174,6 +174,10 @@ List<Student> findAllStudentsNQ();
 		
 		Client client;
 
+- [database ref](https://github.com/dvinay/spring-jpa-crash-course/blob/master/associations/src/main/resources/onetomany.txt)
+- [parent entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/associations/src/main/java/com/fuppino/spring/associations/entities/Customer.java)
+- [child entity](https://github.com/dvinay/spring-jpa-crash-course/blob/master/associations/src/main/java/com/fuppino/spring/associations/entities/PhoneNumber.java)
+
 - Cascading is process of propagating the operations between associated tables
 - we can controll the cascade propagation by giving different values to cascade parameter in the association annotation
 	- persist - insert on main object should propagate to child object
@@ -207,6 +211,8 @@ private Set<PhoneNumber> numbers;
 
 #### ManyToMany ####
 - Patient * <-> * Doctor
+- in Many to many association we need a extra table to store the mapping information
+
 
 
 
