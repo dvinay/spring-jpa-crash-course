@@ -160,19 +160,17 @@ List<Student> findAllStudentsNQ();
 #### OneToMany and ManyToOne ####
 - client 1 -> * PhoneNumber
 	- Client
-		@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
 
+		@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
 		List<PhoneNumber> phoneNumbers;
 
 
 	- PhoneNumber
 
 		@ManyToOne
-
 		@JoinColumn(name="fk_keycolumnname")
-
 		Client client;
-		
+
 - Cascading is process of propagating the operations between associated tables
 - we can controll the cascade propagation by giving different values to cascade parameter in the association annotation
 	- persist - insert on main object should propagate to child object
