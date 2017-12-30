@@ -162,13 +162,16 @@ List<Student> findAllStudentsNQ();
 	- Client
 
 		@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
+
 		List<PhoneNumber> phoneNumbers;
 
 
 	- PhoneNumber
 
 		@ManyToOne
+		
 		@JoinColumn(name="fk_keycolumnname")
+		
 		Client client;
 
 - Cascading is process of propagating the operations between associated tables
