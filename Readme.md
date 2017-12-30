@@ -278,6 +278,7 @@ public void testCaching() {
 ```
 - To remove object from Level-1 we can evict the object from the persistance context
 - To access the low level components like entity manager and hibernate session; we need to use entitymanager.unwrap() to access the session.
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/2f20b921828963ccc1caf14625160a6e2aacfc41)
 ```JAVA
 @Transactional
 public void testCaching() {
@@ -291,6 +292,52 @@ public void testCaching() {
 	productRepository.findOne(2);
 }
 ```
+
+#### L2 - Caching ####
+- Eh Cache, is a caching framework; fast and lightweight [ref](http://www.ehcache.org/documentation/2.8/configuration/configuration.html)
+- It supports in-memory and disk based
+- we can provide timeout and life time of objects
+- Steps to add L2 cache using EhCache
+	- add the EhCache dependecy
+```XML
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-ehcache</artifactId>
+</dependency>
+```
+	- Enable the EhCache in application.properties
+```JAVA
+spring.jpa.properties.hibernate.cache.use_second_level_cache=true
+spring.jpa.properties.hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory
+spring.jpa.properties.javax.persistence.sharedCache.mode=ALL
+spring.cache.ehcache.config=classpath:ehcahe.xml
+```
+	- Configure the ehcache.xml file to provide storage and time information
+```XML
+<ehcache>
+	<diskpath path="java.io.tmpdir"/>
+	
+	<defaultCache 
+		maxElementsInMemeory="100" 
+		eternal="false" 
+		timeToIdleSeconds="5"
+     	timeToLiveSeconds="10"
+     	overflowToDisk="true"/>
+</ehcache>
+```
+	- Make entities cacheable/add annotations
+[ref]()
+#### Cache Concurrency Strategy ####
+- READ_ONLY
+	- used for only when entities never change, only for read only purpose applications
+- NONSTRICT_READ_WRITE
+	- cache will update only the transaction commits to the database; mean time if another transaction read the data it will get wrong data.
+- READ_WRITE
+	- soft locks will be used; more consistance
+- TRANSACTIONAL
+	- XA/Distributed transactions; if any changes in cache will be commit to across the database
+
+
 
 
 
