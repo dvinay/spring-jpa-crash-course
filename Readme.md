@@ -266,6 +266,7 @@ private Set<PhoneNumber> numbers;
 #### L1 - Caching ####
 - L1 cache is always enabled at persistance context; to enable in the code level we need to add @Transactional from spring annotation package to our test method or service method to fetch
 - Transactional annotation enables the L1 cache; when first time it hit the database and fetch the record it keep in session; for next two time fetch it will get data from the L1 cache
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/2268fd439b87eb6af4bc1f544d1ce440726c8122)
 ```JAVA
 @Test
 @Transactional
