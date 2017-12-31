@@ -354,6 +354,8 @@ spring.cache.ehcache.config=classpath:ehcahe.xml
 
 - Note: if transaction happen in one db, it's called local Transaction. If it's a multiple databases, it's called distributed Transaction
 - to make sure one operation as transaction we need to add @Transactional to make sure the all the db operations follow ACID property
+[ref](https://github.com/dvinay/spring-jpa-crash-course/commit/1947fd31e03ff3975bf98a9705d502f6d2bfef5a)
+
 
 
 
