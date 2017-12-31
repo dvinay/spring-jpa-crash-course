@@ -346,11 +346,14 @@ spring.cache.ehcache.config=classpath:ehcahe.xml
 	- Consistency - db should be left end of the transaction
 	- Isolation - each transaction has to work has individually; without depending on other transaction
 	- Durability - changes should commited to database
+
 - Components in Transaction management; 
 	- Transactional Application - our application which do transactions
 	- Transactional Manager/Transaction Co-ordinates - which use Resource Manager to do transactions
 	- Resource Manager - which know how to use DB api's like jdbc,jpa etc
+
 - Note: if transaction happen in one db, it's called local Transaction. If it's a multiple databases, it's called distributed Transaction
+- to make sure one operation as transaction we need to add @Transactional to make sure the all the db operations follow ACID property
 
 
 
